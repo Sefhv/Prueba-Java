@@ -1,0 +1,144 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form id="createForm">
+		<div class="container" id="createView">
+			<div class="row">
+				<div class="col">
+					<h3>Información de la empresa</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Tipo de documento: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.documentType}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Numero de documento: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.documentNumber}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Nombres y Apellidos: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.name}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Dirección: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.address}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="País: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.country}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Ciudad: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.city}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Departamento: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.department}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Telefono " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.phone}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<h3>Información del representante legal</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Tipo de documento: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.legalDocumentType}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Numero de documento: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.legalDocumentNumber}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Nombres y Apellidos: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.legalName}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Dirección: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.legalAddress}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="País: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.legalCountry}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Ciudad: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.legalCity}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Departamento: " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.legalDepartment}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Telefono " />
+						<h:inputText class="form-control" value="#{enterpriseBean.enterpriseTransport.legalPhone}" />
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-sm-4 offset-md-4">
+					<div class="form-group">
+						<h:commandButton id="createCountry" action="#{enterpriseBean.saveEnterprise}" class="btn btn-primary" value="#{enterpriseBean.showCreate ? 'Crear Empresa' : 'Editar Empresa'} ">
+							<f:ajax execute="@form" render="@all" />
+						</h:commandButton>
+						<h:commandButton id="goBackCreateCountry" action="#{enterpriseBean.goIndex}" class="btn btn-secondary offset-md-4" value="Regresar">
+							<f:ajax execute="goBackCreateCountry" render="@all" />
+						</h:commandButton>
+					</div>
+				</div>
+			</div>
+		</div>
+	</h:form>
+</f:view>

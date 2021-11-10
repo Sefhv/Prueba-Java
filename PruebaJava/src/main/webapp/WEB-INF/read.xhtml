@@ -1,0 +1,36 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 offset-md-4">
+				<h:form>
+					<div class="form-group">
+						<h:outputLabel value="Nombre: " />
+						<h:outputText value=" #{countryBean.country.name}" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel value="Descripción: " />
+						<h:outputText value=" #{countryBean.country.description}" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel value="Area: " />
+						<h:outputText value=" #{countryBean.country.area}" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel value="Población: " />
+						<h:outputText value=" #{countryBean.country.population}" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel value="Participación en guerra: " />
+						<h:outputText value=" #{countryBean.country.war}" />
+					</div>
+					<div class="form-group">
+						<h:commandButton action="#{countryBean.goIndex()}" value="Regresar" class="btn btn-primary">
+							<f:ajax execute="@form" render="@all" />
+						</h:commandButton>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</f:view>

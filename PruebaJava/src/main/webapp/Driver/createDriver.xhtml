@@ -1,0 +1,81 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form id="createForm">
+		<div class="container" id="createView">
+			<div class="row">
+				<div class="col">
+					<h3>Información del conductor</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Tipo de documento: " />
+						<h:inputText class="form-control" value="#{driverBean.driver.documentType}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Numero de documento: " />
+						<h:inputText class="form-control" value="#{driverBean.driver.documentNumber}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Nombres y Apellidos: " />
+						<h:inputText class="form-control" value="#{driverBean.driver.name}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Dirección: " />
+						<h:inputText class="form-control" value="#{driverBean.driver.address}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="País: " />
+						<h:inputText class="form-control" value="#{driverBean.driver.country}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Ciudad: " />
+						<h:inputText class="form-control" value="#{driverBean.driver.city}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Departamento: " />
+						<h:inputText class="form-control" value="#{driverBean.driver.department}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Telefono " />
+						<h:inputText class="form-control" value="#{driverBean.driver.phone}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-4">
+					<div class="form-group">
+						<h:commandButton id="createCountry" action="#{driverBean.saveDriver}" class="btn btn-primary" value="#{driverBean.showCreate ? 'Crear Conductor' : 'Editar Conductor'}">
+							<f:ajax execute="@form" render="@all" />
+						</h:commandButton>
+						<h:commandButton id="goBackCreateCountry" action="#{driverBean.goIndex}" class="btn btn-secondary offset-md-4" value="Regresar">
+							<f:ajax execute="goBackCreateCountry" render="@all" />
+						</h:commandButton>
+					</div>
+				</div>
+			</div>
+		</div>
+	</h:form>
+</f:view>

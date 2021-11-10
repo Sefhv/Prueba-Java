@@ -1,0 +1,77 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<div class="container">
+		<h:form>
+			<div class="row">
+				<div class="col">
+					<h3>Información de la empresa</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Tipo de documento: " />
+						<h:outputText value=" #{driverBean.driver.documentType}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Numero de documento: " />
+						<h:outputText value=" #{driverBean.driver.documentNumber}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Nombres y Apellidos: " />
+						<h:outputText value=" #{driverBean.driver.name}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Dirección: " />
+						<h:outputText value=" #{driverBean.driver.address}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="País: " />
+						<h:outputText value=" #{driverBean.driver.country}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Ciudad: " />
+						<h:outputText value=" #{driverBean.driver.city}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Departamento: " />
+						<h:outputText value=" #{driverBean.driver.department}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Telefono " />
+						<h:outputText value=" #{driverBean.driver.phone}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-4">
+					<div class="form-group">
+						<h:commandButton action="#{driverBean.goIndex}" value="Regresar" class="btn btn-primary">
+							<f:ajax execute="@form" render="@all" />
+						</h:commandButton>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</div>
+</f:view>

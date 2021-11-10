@@ -1,0 +1,110 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form id="createForm">
+		<div class="container" id="createView">
+			<div class="row">
+				<div class="col">
+					<h3>Registrar vehiculos</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Placa: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.license}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Motor: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.engine}" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Chasis: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.chassis}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Modelo: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.model}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Fecha de matricula: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.registration}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Pasajeros sentados: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.sitDownPassengers}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Pasajeros de pie: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.standUpPassengers}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Peso seco: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.dryWeight}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Peso bruto: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.grossWeight}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Cantidad de puertas: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.doors}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-2">
+					<div class="form-group">
+						<h:outputLabel value="Marca: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.brand}" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel value="Linea: " />
+						<h:inputText class="form-control" value="#{vehicleBean.vehicle.line}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-md-4">
+					<div class="form-group">
+						<h:commandButton id="createCountry" action="#{vehicleBean.saveVehicle}" class="btn btn-primary" value="#{vehicleBean.showCreate ? 'Crear Vehiculo' : 'Editar Vehiculo'}">
+							<f:ajax execute="@form" render="@all" />
+						</h:commandButton>
+						<h:commandButton id="goBackCreateCountry" action="#{vehicleBean.goIndex}" class="btn btn-secondary offset-md-4" value="Regresar">
+							<f:ajax execute="goBackCreateCountry" render="@all" />
+						</h:commandButton>
+					</div>
+				</div>
+			</div>
+		</div>
+	</h:form>
+</f:view>
